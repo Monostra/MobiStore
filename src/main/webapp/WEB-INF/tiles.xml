@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="base.definition" template="/views/tiles/template.jsp">
+        <put-attribute name="header" value="/views/tiles/header.jsp"/>
+        <put-attribute name="leftBar" value="/views/tiles/leftBar.jsp"/>
+        <put-attribute name="footer" value="/views/tiles/footer.jsp"/>
+        <put-attribute name="title" value="internet_shop"/>
+    </definition>
+
+    <definition name="*-*-*" extends="base.definition">
+        <put-attribute name="body" value="/{1}/{2}/{3}.jsp"/>
+    </definition>
+
+    <definition name="admin.definition" template="/views/admin/tiles/template.jsp">
+        <put-attribute name="adminHeader" value="/views/admin/tiles/adminHeader.jsp"/>
+        <put-attribute name="adminLeftBar" value="/views/admin/tiles/adminLeftBar.jsp"/>
+        <put-attribute name="adminFooter" value="/views/admin/tiles/adminFooter.jsp"/>
+        <put-attribute name="adminTitle" value="internet_shop"/>
+    </definition>
+
+    <definition name="*-*" extends="admin.definition">
+        <put-attribute name="adminBody" value="/views/{1}/{2}.jsp"/>
+    </definition>
+
+</tiles-definitions>
